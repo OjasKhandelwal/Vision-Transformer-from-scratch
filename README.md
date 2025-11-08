@@ -4,7 +4,7 @@ Studied & Implemented the research paper “An Image is Worth 16x16 Words: Trans
 
 # Code
 
-So we divided our code in 3 parts
+So we divided our code in 3 main parts
 
 ## 1. Patch Embedding :
 This module splits an image into patches and then embeds each patch into a vector....basically converting the image into a sequence of tokens (like words in NLP), which can then be fed to a Transformer.
