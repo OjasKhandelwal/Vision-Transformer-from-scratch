@@ -23,9 +23,9 @@ c. Maintain stability during training (via LayerNorm + Residual connections).
 
 After the image has gone through:
 
-Patch Embedding → (image → patch tokens)
+1. Patch Embedding : (image → patch tokens)
 
-Transformer Encoder → (learn relationships between patches)
+2. Transformer Encoder : (learn relationships between patches)
 
 we now have a sequence of embeddings, each representing part of the image.
 
@@ -35,23 +35,23 @@ for example: predicting whether the image is a “cat,” “car,” or “plane
 
 # How ViT Operates ??????
 
-**Step-1** : Input Image
+**Step 1**: Input an image.
 
-**Step-2** : Split image into fixed size patches
+**Step 2**: Split the image into fixed-size patches.
 
-**Step-3** : Each patch is flattened into a vector
+**Step 3**: Flatten each patch into a vector.
 
-**Step-4** : Each flattened patch is passed through a *Learnable Linear Layer* , which maps the patch to D-dimensional embedding 
+**Step 4**: Pass each flattened patch through a learnable linear layer to map it into a D-dimensional embedding.
 
-**Step-5** : Add a learnable [CLS]  token 
+**Step 5**: Add a learnable [CLS] token, which serves as a representation of the entire image.
 
-**Step-6** : Add Positional Embedding to each patch embedding 
+**Step 6**: Add positional embeddings to retain patch order information.
 
-**Step-7** : Feed to Transformer Encoder
+**Step 7**: Feed the sequence (patch embeddings + [CLS] token) into the Transformer Encoder.
 
-Atp , the [CLS] token embedding represents the entire image
+At this point, the [CLS] token embedding represents the overall image representation.
 
-**Step-8** : It is passed to classification head (Linear + Softmax) , which gives the final predicted class probabilities
+**Step 8**: Pass the [CLS] token embedding through the classification head (Linear layer + Softmax) to obtain the final class probabilities.
 
 
 
@@ -61,4 +61,10 @@ Atp , the [CLS] token embedding represents the entire image
 ![Architecture](ViT.png)
 
 
+
+
+# Thankyou :)
+Thank you for reading the entire README and going through the code!
+
+***Note***: ChatGPT was used solely for grammar correction. The content reflects my own understanding and interpretations of the original paper.
 
